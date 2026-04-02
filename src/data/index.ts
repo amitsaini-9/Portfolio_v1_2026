@@ -5,21 +5,13 @@
 
 // Personal Information
 export const personalInfo = {
-  name: "Your Name",
+  name: "Amit Saini",
   title: "Software Engineer",
   subtitle: "Web Developer",
   email: "your.email@example.com",
   location: "Your City, Country",
   bio: "A passionate software engineer focused on building exceptional web experiences.",
   resumeUrl: "/resume.pdf",
-};
-
-// Social Links
-export const socialLinks = {
-  github: "https://github.com/yourusername",
-  linkedin: "https://linkedin.com/in/yourusername",
-  twitter: "https://twitter.com/yourusername",
-  instagram: "https://instagram.com/yourusername",
 };
 
 // Navigation Items
@@ -36,15 +28,49 @@ export const navItems = [
 export const skills = [
   {
     category: "Frontend",
-    items: ["React", "Next.js", "TypeScript", "Tailwind CSS", "Three.js"],
+    items: [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "TypeScript",
+      "React",
+      "Next.js",
+      "Tailwind CSS",
+      "Three.js",
+      "Bootstrap"
+    ],
   },
   {
     category: "Backend",
-    items: ["Node.js", "Python", "PostgreSQL", "MongoDB", "REST APIs"],
+    items: ["Node.js", "Express", "Python", "Java", "REST APIs"],
   },
   {
-    category: "Tools",
-    items: ["Git", "Docker", "Figma", "VS Code", "Vercel"],
+    category: "Database & Cloud",
+    items: [
+      "MongoDB",
+      "PostgreSQL",
+      "Prisma",
+      "Supabase",
+      "Firebase",
+      "Neon",
+      "Convex",
+      "AWS",
+      "Google Cloud"
+    ],
+  },
+  {
+    category: "AI & Automation",
+    items: ["Machine Learning", "N8N AI Automation", "AI Agentic Coding"],
+  },
+  {
+    category: "Tools & Integrations",
+    items: [
+      "Git",
+      "GitHub",
+      "Clerk",
+      "Shopify Extensions",
+      "Whatsapp Business API"
+    ],
   },
 ];
 
@@ -82,34 +108,36 @@ export const projects = [
   },
 ];
 
+// Career Start Date (June 6th, 2024)
+export const CAREER_START_DATE = new Date("2024-06-06");
+
+// Personal Stats
+export const personalStats = [
+  { label: "Experience", value: "Dynamic" }, // Calculated dynamically in component
+  { label: "Projects", value: "10+" },
+  { label: "Clients", value: "5+" },
+];
+
+export const education = [
+  {
+    id: 1,
+    institution: "Your University Name",
+    degree: "B.Tech in Computer Science",
+    duration: "2020 - 2024",
+    description: "Specialized in Full Stack Development",
+  },
+];
+
 // Work Experience
 export const experiences = [
   {
     id: 1,
-    company: "Company Name",
-    role: "Software Engineer",
-    duration: "2023 - Present",
-    description: "Description of your role and key achievements at this company.",
-    technologies: ["React", "TypeScript", "Node.js"],
-  },
-  {
-    id: 2,
-    company: "Previous Company",
-    role: "Junior Developer",
-    duration: "2021 - 2023",
-    description: "Description of your role and key achievements at this company.",
-    technologies: ["JavaScript", "Python", "PostgreSQL"],
-  },
-];
-
-// Education
-export const education = [
-  {
-    id: 1,
-    institution: "University Name",
-    degree: "Bachelor of Science in Computer Science",
-    duration: "2017 - 2021",
-    description: "Relevant coursework and achievements.",
+    company: "Intap Studios Pvt Ltd",
+    role: "Software Developer",
+    startDate: "2025-07-14", // ISO format for easy parsing
+    duration: "Present", // Fallback or suffix
+    description: "Working on Photozoot AI, building advanced AI-powered image processing tools.",
+    technologies: ["React", "Next.js", "AI Integration"],
   },
 ];
 

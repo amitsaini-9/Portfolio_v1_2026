@@ -45,11 +45,16 @@
 
   html {
     scroll-behavior: smooth;
+    overscroll-behavior-y: none;
+    overflow-x: hidden;
   }
 
   body {
     @apply bg-background text-foreground;
+    overscroll-behavior-y: none;
     overflow-x: hidden;
+    position: relative;
+    width: 100%;
   }
 }
 
@@ -75,4 +80,14 @@
 ::selection {
   background: rgba(139, 92, 246, 0.3);
   color: #fff;
+}
+
+@layer utilities {
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
 }

@@ -157,15 +157,15 @@ function SidebarNav() {
 function HeroText() {
   return (
     <motion.div
-      className="absolute left-6 md:left-12 lg:left-20 top-1/2 -translate-y-1/2 z-20 max-w-[90%] md:max-w-[60%] lg:max-w-[45%]"
+      className="absolute left-0 top-1/2 -translate-y-1/2 z-20 w-full px-6 flex flex-col items-center text-center min-[680px]:items-start min-[680px]:text-left min-[680px]:left-12 min-[680px]:max-w-[60%] lg:left-20 lg:max-w-[45%]"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ delay: 0.5, duration: 1 }}
     >
-      <div className="flex flex-col gap-0">
+      <div className="flex flex-col gap-0 items-center min-[680px]:items-start">
         <div className="overflow-hidden">
           <motion.h1
-            className="text-4xl md:text-6xl lg:text-7xl xl:text-8xl font-bold text-white tracking-tighter leading-[0.9]"
+            className="text-5xl sm:text-6xl md:text-6xl lg:text-7xl xl:text-8xl font-bold text-white tracking-tighter leading-[0.9]"
             initial={{ y: 100, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.7, duration: 0.8, ease: "easeOut" }}
@@ -175,7 +175,7 @@ function HeroText() {
         </div>
         <div className="overflow-hidden">
           <motion.h1
-            className="text-4xl md:text-6xl lg:text-7xl xl:text-8xl font-bold text-transparent bg-clip-text bg-linear-to-r from-cyan-400 to-purple-500 tracking-tighter leading-[0.9]"
+            className="text-5xl sm:text-6xl md:text-6xl lg:text-7xl xl:text-8xl font-bold text-transparent bg-clip-text bg-linear-to-r from-cyan-400 to-purple-500 tracking-tighter leading-[0.9]"
             initial={{ y: 100, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.9, duration: 0.8, ease: "easeOut" }}
@@ -186,7 +186,16 @@ function HeroText() {
       </div>
 
       <motion.p
-        className="mt-6 text-sm md:text-base text-white/50 font-light tracking-widest uppercase"
+        className="mt-6 text-xl md:text-2xl text-white font-medium tracking-wide"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 1.1, duration: 0.8 }}
+      >
+        Hey, I&apos;m <span className="text-cyan-400">{personalInfo.name}</span>
+      </motion.p>
+
+      <motion.p
+        className="mt-2 text-sm md:text-base text-white/50 font-light tracking-widest uppercase"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 1.3, duration: 0.8 }}
@@ -195,7 +204,7 @@ function HeroText() {
       </motion.p>
 
       <motion.p
-        className="mt-3 text-sm text-white/30 max-w-xs"
+        className="mt-3 text-sm text-white/40 max-w-sm min-[680px]:max-w-xs leading-relaxed"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 1.5, duration: 0.8 }}
@@ -233,7 +242,7 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="relative h-screen w-full overflow-hidden bg-black"
+      className="min-h-[100dvh] w-full bg-transparent relative flex flex-col items-center justify-center overflow-hidden font-primary pt-16 sm:pt-20 md:pt-0"
     >
       {/* Space Background with stars and nebula */}
       <SpaceBackground />
@@ -241,20 +250,13 @@ export default function Hero() {
       {/* Shooting Stars - fast, no tail */}
       <ShootingStars />
 
-      {/* Spline 3D Scene - responsive positioning
-          Pushing distinctively further right by increasing container width
-          w-[200%] -> Robot centered at 100% screen width (far right edge)
-          w-[185%] -> Robot centered at 92.5% screen width
-      */}
-      <div className="hidden md:block absolute top-0 left-0 h-full z-10 w-[205%] md:w-[195%] lg:w-[185%] 2xl:w-[180%] pointer-events-none">
+      {/* Spline 3D Scene - responsive positioning, hidden on mobile (< 680px) */}
+      <div className="hidden min-[680px]:block absolute top-0 left-0 h-full z-10 w-[205%] md:w-[195%] lg:w-[185%] 2xl:w-[180%]">
         <Spline
           className="w-full h-full"
           scene="https://prod.spline.design/NV0Oc99COwfNTbxa/scene.splinecode"
         />
       </div>
-
-      {/* Sidebar Navigation */}
-      <SidebarNav />
 
       {/* Hero Text */}
       <HeroText />
