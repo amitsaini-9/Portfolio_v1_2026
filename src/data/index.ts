@@ -6,11 +6,11 @@
 // Personal Information
 export const personalInfo = {
   name: "Amit Saini",
-  title: "Software Engineer",
-  subtitle: "Web Developer",
-  email: "your.email@example.com",
-  location: "Your City, Country",
-  bio: "A passionate software engineer focused on building exceptional web experiences.",
+  title: "Full Stack Developer & AI Engineer",
+  subtitle: "Web & AI Solutions",
+  email: "hello@sainiamit.com",
+  location: "India",
+  bio: "Building custom web solutions, AI integrations, and automation systems. From concept to deployment.",
   resumeUrl: "/resume.pdf",
 };
 
@@ -21,7 +21,8 @@ export const navItems = [
   { label: "Skills", href: "#skills" },
   { label: "Projects", href: "#projects" },
   { label: "Experience", href: "#experience" },
-  { label: "Contact", href: "#contact" },
+  { label: "Hire", href: "#hire" },
+  { label: "Support", href: "#support" },
 ];
 
 // Skills
@@ -78,33 +79,59 @@ export const skills = [
 export const projects = [
   {
     id: 1,
-    title: "Project One",
-    description: "A brief description of your first project and its key features.",
-    image: "/projects/project1.jpg",
-    tags: ["Next.js", "TypeScript", "Tailwind"],
-    liveUrl: "https://project1.com",
-    githubUrl: "https://github.com/yourusername/project1",
+    title: "ApplyX",
+    description: "AI-powered job hunting platform that auto-applies to hundreds of jobs across LinkedIn, Indeed, Naukri & more.",
+    image: "/projects/applyx.png",
+    fullImage: "/projects/applyx-full.png",
+    tags: ["Next.js", "AI", "Automation", "SaaS"],
+    liveUrl: "https://apply-x-auto-job-hunter.vercel.app/",
+    githubUrl: "",
     featured: true,
+    techStack: ["Next.js 16", "TypeScript", "Tailwind CSS", "OpenAI API", "Supabase", "Vercel"],
+    details: "Built from scratch as a personal project. Features ATS-optimized resume generation, multi-platform job scraping, and intelligent matching algorithms.",
+    type: "Personal Project",
   },
   {
     id: 2,
-    title: "Project Two",
-    description: "A brief description of your second project and its key features.",
-    image: "/projects/project2.jpg",
-    tags: ["React", "Node.js", "MongoDB"],
-    liveUrl: "https://project2.com",
-    githubUrl: "https://github.com/yourusername/project2",
+    title: "AI Interviewer",
+    description: "Practice real-world interviews with AI characters that simulate HR managers, tech leads, and senior developers.",
+    image: "/projects/ai-interviewer.png",
+    fullImage: "/projects/ai-interviewer-full.png",
+    tags: ["React", "AI", "Speech API", "TypeScript"],
+    liveUrl: "https://ai-interviewer-indol-three.vercel.app/",
+    githubUrl: "",
     featured: true,
+    techStack: ["React", "TypeScript", "Web Speech API", "Google Gemini", "Tailwind CSS", "Vercel"],
+    details: "Personal project featuring real-time speech recognition, AI-powered interview simulation, and detailed performance feedback with scoring.",
+    type: "Personal Project",
   },
   {
     id: 3,
-    title: "Project Three",
-    description: "A brief description of your third project and its key features.",
-    image: "/projects/project3.jpg",
-    tags: ["Three.js", "GSAP", "WebGL"],
-    liveUrl: "https://project3.com",
-    githubUrl: "https://github.com/yourusername/project3",
-    featured: false,
+    title: "Talker",
+    description: "Anonymous chat platform with AI roleplay characters and real people. Completely private and encrypted.",
+    image: "/projects/project-v2.png",
+    fullImage: "/projects/project-v2-full.png",
+    tags: ["Next.js", "WebSocket", "AI", "Real-time"],
+    liveUrl: "https://project-v2-one.vercel.app/",
+    githubUrl: "",
+    featured: true,
+    techStack: ["Next.js 15", "WebSocket", "AI Characters", "Supabase", "Real-time Chat", "Vercel"],
+    details: "Personal project supporting text, images, audio, video sharing with AI roleplay characters. End-to-end encrypted with anonymous identity.",
+    type: "Personal Project",
+  },
+  {
+    id: 4,
+    title: "Buildera",
+    description: "A web development agency landing page with cinematic video backgrounds, liquid glass effects, and smooth scroll animations.",
+    image: "/projects/buildera.png",
+    fullImage: "/projects/buildera-full.png",
+    tags: ["Next.js", "Framer Motion", "Tailwind", "Frontend"],
+    liveUrl: "https://buildera.sainiamit.com/",
+    githubUrl: "",
+    featured: true,
+    techStack: ["Next.js 16", "TypeScript", "Tailwind CSS", "Framer Motion", "HLS.js", "Vercel"],
+    details: "Frontend-only landing page with immersive video backgrounds, liquid glass UI effects, scroll-driven animations, and a contact form with email integration.",
+    type: "Personal Project",
   },
 ];
 
@@ -132,12 +159,21 @@ export const education = [
 export const experiences = [
   {
     id: 1,
-    company: "Intap Studios Pvt Ltd",
-    role: "Software Developer",
-    startDate: "2025-07-14", // ISO format for easy parsing
-    duration: "Present", // Fallback or suffix
-    description: "Working on Photozoot AI, building advanced AI-powered image processing tools.",
-    technologies: ["React", "Next.js", "AI Integration"],
+    company: "Intap Studio Pvt Ltd",
+    role: "Software Development Engineer",
+    startDate: "May 2026",
+    duration: "Present",
+    description: "Promoted to full-time SDE. Building and scaling Photozoot AI — an AI-powered image processing platform. Leading frontend architecture, AI pipeline integration, and production deployments.",
+    technologies: ["Next.js 16", "TypeScript", "AI/ML", "Python", "AWS"],
+  },
+  {
+    id: 2,
+    company: "Intap Studio Pvt Ltd",
+    role: "Software Developer Intern",
+    startDate: "July 2025",
+    duration: "10 months",
+    description: "Built core features for Photozoot AI from ground up. Developed the full-stack web application, integrated AI models for image enhancement, implemented real-time processing pipelines, and deployed to production.",
+    technologies: ["React", "Next.js", "Node.js", "Supabase", "AI Integration", "Vercel"],
   },
 ];
 
@@ -154,9 +190,9 @@ export const testimonials = [
 
 // SEO Metadata
 export const seoConfig = {
-  title: "Your Name | Software Engineer",
-  description: "Portfolio website of Your Name - A software engineer specializing in web development.",
-  keywords: ["software engineer", "web developer", "portfolio", "react", "next.js"],
-  ogImage: "/og-image.jpg",
-  siteUrl: "https://yourportfolio.com",
+  title: "Amit Saini | Full Stack Developer & AI Engineer",
+  description: "Hire Amit Saini — Full stack web & app developer specializing in custom websites, AI integration, WhatsApp Business API, Meta API, SaaS platforms, and deployment.",
+  keywords: ["Amit Saini", "full stack developer", "AI engineer", "web developer India", "WhatsApp API", "Meta API", "hire developer"],
+  ogImage: "/logo.png",
+  siteUrl: "https://sainiamit.com",
 };
