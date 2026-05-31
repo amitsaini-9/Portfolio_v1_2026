@@ -5,6 +5,7 @@ import { motion, AnimatePresence, useScroll, useTransform } from "framer-motion"
 import { ArrowRight, Send, Loader2, Check, Heart, Coffee, ExternalLink } from "lucide-react";
 import Script from "next/script";
 import { personalInfo, skills, projects, experiences, education } from "@/data";
+import * as analytics from "@/lib/analytics";
 
 declare global {
   interface Window { Razorpay: any; }
@@ -774,9 +775,20 @@ function HireSection() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ name, email }),
       });
-      if (res.ok) { setStatus("success"); setName(""); setEmail(""); }
-      else setStatus("error");
-    } catch { setStatus("error"); }
+      if (res.ok) {
+        setStatus("success");
+        setName("");
+        setEmail("");
+        analytics.trackContactFormSubmit(name, email);
+      }
+      else {
+        setStatus("error");
+        analytics.trackContactFormError("Server error");
+      }
+    } catch (error) {
+      setStatus("error");
+      analytics.trackContactFormError("Network error");
+    }
   };
 
   return (
@@ -897,6 +909,7 @@ function SupportSection() {
     const amount = getAmount();
     if (!amount) return;
     setStatus("loading");
+    analytics.trackSupportClick(amount);
     try {
       const res = await fetch("/api/support/create-order", {
         method: "POST",
@@ -905,6 +918,7 @@ function SupportSection() {
       });
       if (!res.ok) throw new Error();
       const { order_id, currency } = await res.json();
+      analytics.trackPaymentInitiated(amount);
 
       const rzp = new window.Razorpay({
         key: "rzp_live_SvrmXaDUtmpmTx",
@@ -919,6 +933,7 @@ function SupportSection() {
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ ...response, amount }),
           });
+          analytics.trackPaymentSuccess(amount, order_id);
           setStatus("success");
         },
         modal: { ondismiss: () => setStatus("idle") },
